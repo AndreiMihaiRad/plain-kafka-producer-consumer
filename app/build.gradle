@@ -3,7 +3,7 @@ plugins {
     id 'java'
 }
 
-ext.javaMainClass = "com.example.kafka.App"
+ext.javaMainClass = "com.example.App"
 
 application {
     mainClassName = javaMainClass
@@ -15,30 +15,24 @@ repositories {
 }
 
 dependencies {
-    compileOnly 'org.projectlombok:lombok:1.18.12'
-    annotationProcessor 'org.projectlombok:lombok:1.18.12'
+    // Lombok
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
 
-    implementation 'org.apache.kafka:kafka-clients:3.1.0'
+    // Kafka Client
+    implementation 'org.apache.kafka:kafka-clients:3.3.1'
 
-    implementation "com.fasterxml.jackson.core:jackson-core:2.13.3"
-    implementation "com.fasterxml.jackson.core:jackson-annotations:2.13.3"
-    implementation "com.fasterxml.jackson.core:jackson-databind:2.13.3"
-    implementation "com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.13.3"
-    implementation "com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.13.3"
-    implementation "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.3"
+    //Jackson
+    implementation "com.fasterxml.jackson.core:jackson-core:2.13.4"
+    implementation "com.fasterxml.jackson.core:jackson-databind:2.13.4"
 
-// logging
-    implementation 'org.slf4j:slf4j-api:2.0.0-alpha1'
-    implementation 'org.slf4j:slf4j-log4j12:2.0.0-alpha1'
-    implementation 'org.apache.logging.log4j:log4j:2.14.1'
+    // Logging
+    implementation 'org.slf4j:slf4j-api:2.0.3'
+    implementation 'org.slf4j:slf4j-log4j12:2.0.3'
+    implementation 'org.apache.logging.log4j:log4j:2.19.0'
 
     // Use TestNG framework, also requires calling test.useTestNG() below
     testImplementation 'org.testng:testng:7.4.0'
-}
-
-application {
-    // Define the main class for the application.
-    mainClass = 'com.example.kafka.App'
 }
 
 tasks.named('test') {

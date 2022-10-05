@@ -5,7 +5,9 @@ import com.example.kafka.KafkaFactory;
 import com.example.kafka.KafkaTopics;
 import com.example.kafka.eventmessage.UserEvent;
 import com.example.kafka.util.MessageHelper;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 public class UserEventKafkaProducer extends AbstractKafkaProducer<UserEvent> {
 
     public UserEventKafkaProducer() {
@@ -17,6 +19,7 @@ public class UserEventKafkaProducer extends AbstractKafkaProducer<UserEvent> {
         String firstName = MessageHelper.getRandomString();
         String lastName = MessageHelper.getRandomString();
         UserEvent userEvent = new UserEvent(firstName, lastName);
+        log.info("UserEvent was produced");
         return userEvent;
     }
 }

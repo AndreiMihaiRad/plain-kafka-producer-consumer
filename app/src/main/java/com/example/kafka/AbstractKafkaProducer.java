@@ -23,6 +23,7 @@ public abstract class AbstractKafkaProducer<V> {
 
     public void runAlways() throws Exception {
         while (true) {
+            log.info("Producing new event ...");
             String key = UUID.randomUUID().toString();
             V payload = getRandomPayloadObject();
 
