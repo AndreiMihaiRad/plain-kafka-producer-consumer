@@ -8,9 +8,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 
 @Slf4j
-public class UserEventKafkaConsumers extends AbstractKafkaConsumer<UserEvent> {
+public class UserEventConsumers extends AbstractKafkaConsumer<UserEvent> {
 
-    public UserEventKafkaConsumers() {
+    public UserEventConsumers() {
         super(KafkaFactory.createConsumer(UserEvent.class), KafkaTopics.USER_TOPIC.getValue());
     }
 

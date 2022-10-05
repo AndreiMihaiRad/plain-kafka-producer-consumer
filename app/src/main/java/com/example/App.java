@@ -3,8 +3,8 @@
  */
 package com.example;
 
-import com.example.kafka.consumers.UserEventKafkaConsumers;
-import com.example.kafka.producers.UserEventKafkaProducer;
+import com.example.kafka.consumers.UserEventConsumers;
+import com.example.kafka.producers.UserEventProducer;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.Locale;
@@ -17,12 +17,12 @@ public class App {
         switch(mode.toLowerCase(Locale.ROOT)) {
             case "producer":
                 log.info("Starting the Producer\n");
-                UserEventKafkaProducer userProducer = new UserEventKafkaProducer();
+                UserEventProducer userProducer = new UserEventProducer();
                 userProducer.runAlways();
                 break;
             case "consumer":
                 log.info("Starting the Consumer\n");
-                UserEventKafkaConsumers userConsumer = new UserEventKafkaConsumers();
+                UserEventConsumers userConsumer = new UserEventConsumers();
                 userConsumer.runAlways();
                 break;
             default:

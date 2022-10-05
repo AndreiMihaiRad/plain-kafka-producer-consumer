@@ -8,9 +8,9 @@ import com.example.kafka.util.MessageHelper;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class UserEventKafkaProducer extends AbstractKafkaProducer<UserEvent> {
+public class UserEventProducer extends AbstractKafkaProducer<UserEvent> {
 
-    public UserEventKafkaProducer() {
+    public UserEventProducer() {
         super(KafkaFactory.createProducer(), KafkaTopics.USER_TOPIC.getValue());
     }
 
